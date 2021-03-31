@@ -35,12 +35,12 @@
         </form>
         
         <div id="mainDiv">
-            <div class="row col-sm-5" v-if="result != null"> found {{ (result != null)?result.totalItems:'' }} </div>
+            <div class="row col-sm-5" v-if="result != null"> found {{ (result != null)?result.totalItems + " books":'' }} </div>
             <div class="row">
                 <book-display v-if="result != null" v-for="(book, index) in  result.items" :key="bookid" :book="JSON.stringify(book)"></book-display>
                 <div v-if="result != null">
                     <button type="button" class="btn btn-secondary" @click="paginate(false)" v-if="counter != 0">Previous</button>
-                    <button type="button" class="btn btn-secondary" @click="paginate(true)" v-if="counter>= result.totalItems">Next</button>
+                    <button type="button" class="btn btn-secondary" @click="paginate(true)" v-if="counter <= result.totalItems">Next</button>
                 </div>
             </div>
             </div>
