@@ -5,7 +5,7 @@ function validateForm() {
     var passSame = true;
     var divPassError = document.getElementById("divPassError");
     var passError = document.getElementById("passError");
-    var isFormValid = false;
+    var isFormValid = true;
 
     //check 2 - no invalid characters ( <, >, #, -, {, }, (), ', ", ` )
     var elements = document.getElementsByTagName("input")
@@ -74,7 +74,6 @@ function validateForm() {
     }
     else {
         divPassError.classList.add("invisible");
-        isFormValid = true;
     }
      
 
