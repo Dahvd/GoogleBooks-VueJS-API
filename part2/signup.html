@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up for SocNet</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body id="bsoverride">
+    <div class="text-center mb-3 mt-5">
+        <h1>
+            <img src="images/SocNet.PNG" alt="" width="60" height="60">
+            <Span>Create SocNet Account</Span>
+        </h1>
+    </div>
+
+    <form onsubmit="return validateForm()" novalidate>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="form-group row col-xxl-3 col-xl-4 col-lg-5 col-md-5 col-sm-7 col-7">
+                <div class="mb-3">
+                    <input type="text" id="firstNameTxt" name="firstNameTxt" required class="form-control"
+                        placeholder="First Name">
+                        <div id='firstNameTxtError' class="errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="lastNameTxt" name="lastNameTxt" required class="form-control"
+                        placeholder="Last Name">
+                        <div id='lastNameTxtError' class="errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="usernameTxt" name="usernameTxt" required class="form-control"
+                        placeholder="@ Username">
+                        <div id='usernameTxtError' class="errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <select name="ddGender" id="ddGender" required class="form-control">
+                        <option value="" selected disabled>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="locationTxt" name="locationTxt" required class="form-control" placeholder="Location">
+                    <div id='locationTxtError' class="errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="email" id="emailInput" name="emailInput" required class="form-control"
+                        placeholder="Email">
+                        <div id='emailInputError' class="errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="passwordInput" name="passwordInput" required class="form-control"
+                        placeholder="Password">
+                        <div id="passError" class="invisible"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" required
+                        class="form-control" placeholder="Confirm Password">
+                        <div id="divPassError" class="invisible errorTxtColor"></div>
+                </div>
+                <div class="mb-3">
+                    <select name="secQ" id="secQ" required class="form-control" onchange="updateSecurityQ()">
+                        <option value="" selected disabled>Security Questions</option>
+                        <option value="mmn">What is your mother's maiden name?</option>
+                        <option value="fp">What was the name of your first pet?</option>
+                        <option value="fc">What color was your first car?</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" id="secQAnswer" name="secQAnswer" required
+                        class="form-control invisible" placeholder="Answer">
+                </div>
+
+
+                <div class="mb-3 mt-2 text-center">
+                    <button type="reset" class="btn btn-secondary mt-2">Cancel</button>
+                    <button type="submit" class="btn btn-primary mt-2">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="d-flex justify-content-center fixed-bottom">
+        <footer class="text-muted">Copyright @ 2021 SocNet</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="../js/signup.js"></script>
+</body>
+
+</html>
