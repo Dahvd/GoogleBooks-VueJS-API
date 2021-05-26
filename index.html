@@ -5,7 +5,7 @@
     <title>Google Books Vue</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel='stylesheet' href='styles/styles.css'>
     <script src="https://unpkg.com/vue@next"></script>
 </head>
@@ -15,7 +15,7 @@
     <div id="app">
         <form @submit.prevent="searchGoogleBooks">
             <fieldset class="border">
-                <legend class="w-auto">Google Books Search or <a href='part2/signup.html'>Go to Part 2.</a></legend>
+                <legend class="w-auto">Google Books Search</a></legend>
                 <div class="row form-group">
                     <label for="txtSearch" class="col-sm-1 col-form-label">
                         keyword:
@@ -34,17 +34,21 @@
                 </div>
             </fieldset>
         </form>
-        
+
         <div id="mainDiv">
-            <div class="row col-sm-5" v-if="result != null"> found {{ (result != null)?result.totalItems + " books":'' }} </div>
+            <div class="row col-sm-5" v-if="result != null"> found {{ (result != null)?result.totalItems + " books":''
+                }} </div>
             <div class="row">
-                <book-display v-if="result != null" v-for="(book, index) in  result.items" :key="bookid" :book="JSON.stringify(book)"></book-display>
+                <book-display v-if="result != null" v-for="(book, index) in  result.items" :key="bookid"
+                    :book="JSON.stringify(book)"></book-display>
                 <div v-if="result != null">
-                    <button type="button" class="btn btn-secondary" @click="paginate(false)" v-if="counter != 0">Previous</button>
-                    <button type="button" class="btn btn-secondary" @click="paginate(true)" v-if="counter <= result.totalItems">Next</button>
+                    <button type="button" class="btn btn-secondary" @click="paginate(false)"
+                        v-if="counter != 0">Previous</button>
+                    <button type="button" class="btn btn-secondary" @click="paginate(true)"
+                        v-if="counter <= result.totalItems">Next</button>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
 
